@@ -17,7 +17,7 @@ const io = new Server(server, {
 
 
 cors: {
-  origin: ['https://real-time-chat-frontend-iota.vercel.app/'], // Replace with your actual frontend domain
+  origin: ['https://real-time-chat-frontend-iota.vercel.app'], // Replace with your actual frontend domain
   methods: ['GET', 'POST'],
   credentials: true
 },
