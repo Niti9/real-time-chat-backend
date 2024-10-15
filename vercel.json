@@ -8,13 +8,7 @@
      }
     ],
     "routes": [
-        {
-            "src": "/socket.io/*",
-            "dest": "server.js",
-            "headers": {
-        "Upgrade": "websocket"
-      }
-          },
+      
      {
       "src": "/(.*)",
       "dest": "server.js"
