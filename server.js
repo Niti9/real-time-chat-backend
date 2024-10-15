@@ -8,11 +8,22 @@ app.use(cors()); // Enable CORS for all origins
 
 const server = createServer(app);
 const io = new Server(server, {
-  cors: {
-    origin: '*', // Allow all origins for simplicity
-    methods: ['GET', 'POST'],
-  },
+//   cors: {
+//     origin: '*', // Allow all origins for simplicity
+//     methods: ['GET', 'POST'],
+//   },
+// });
+
+
+
+cors: {
+  origin: ['https://real-time-chat-frontend-iota.vercel.app/'], // Replace with your actual frontend domain
+  methods: ['GET', 'POST'],
+  credentials: true
+},
+transports: ['websocket', 'polling'], // Allow both websocket and polling as transports
 });
+
 
 
 //api to test backend so i can see that it is hosted successfully on vercel
