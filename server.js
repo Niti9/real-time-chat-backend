@@ -4,7 +4,14 @@ import { Server } from 'socket.io';
 import cors from 'cors';
 
 const app = express();
-app.use(cors()); // Enable CORS for all origins
+app.use(cors({
+  origin: ['https://real-time-chat-frontend-iota.vercel.app',
+    'http://localhost:5173',
+  ], // Replace with your actual frontend domain
+  methods: ['GET', 'POST'],
+  credentials: true
+}
+)); // Enable CORS for all origins
 
 const server = createServer(app);
 const io = new Server(server, {
@@ -17,7 +24,9 @@ const io = new Server(server, {
 
 
 cors: {
-  origin: ['https://real-time-chat-frontend-iota.vercel.app'], // Replace with your actual frontend domain
+  origin: ['https://real-time-chat-frontend-iota.vercel.app',
+    'http://localhost:5173',
+  ], // Replace with your actual frontend domain
   methods: ['GET', 'POST'],
   credentials: true
 },
