@@ -8,10 +8,17 @@
      }
     ],
     "routes": [
+        {
+            "src": "/socket.io/*",
+            "dest": "server.js"
+          },
      {
       "src": "/(.*)",
       "dest": "server.js"
      }
-    ]
+    ],
+    "websocket": {
+    "enabled": true
+  }
 }
    
